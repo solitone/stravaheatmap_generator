@@ -46,9 +46,9 @@ def contacts():
     
     return render_template('contacts.html', page='contacts')
 
-@app.route('/download')
+@app.route('/download', methods=['POST'])
 def download():
-    json_string = request.args.get('json_string')
+    json_string = request.form.get('json_string')
     if json_string:
         # Decodifica la stringa JSON precedentemente codificata
         decoded_json_string = unquote(json_string)

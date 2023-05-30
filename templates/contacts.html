@@ -43,7 +43,10 @@
                     <div class="text-center p-3 px-5 bg-primary text-white rounded">
                         {% if json_string %}
                             <h4>File pronto per il download</h4>
-                            <a href="/download?json_string={{ json_string }}" class="btn btn-secondary">Scarica il file</a>
+                            <form action="/download" method="POST">
+                                <input type="hidden" name="json_string" value="{{ json_string }}">
+                                <button type="submit" class="btn btn-secondary">Scarica il file</button>
+                            </form>
                         {% elif error_message %}
                             <h4 class="bg-danger p-1">{{ error_message }}</h4>
                         {% else %}

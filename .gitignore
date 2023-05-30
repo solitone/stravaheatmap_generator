@@ -161,3 +161,4 @@ cython_debug/
 .python-version
 static/.DS_Store
 stravalogin.py
+stravaheatmap_generator.code-workspace
