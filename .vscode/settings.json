@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/628c380d-e9cb-4ad3-9cba-adbeabe81676/resourceGroups/davide.cavallari_rg_7236/providers/Microsoft.Web/sites/stravaheatmap-generator",
+    "appService.deploySubpath": "."
+}

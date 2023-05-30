@@ -35,6 +35,17 @@ def howto():
     
     return render_template('howto.html', page='howto')
 
+@app.route('/generate', methods=['GET', 'POST'])
+def generate():
+    if request.method == 'POST':
+         json_string, error_string = get_json_string()
+         if error_string == "":
+            return render_template('generate.html', page='generate', json_string=json_string)
+         else:
+            return render_template('generate.html', page='generate', error_message=error_string) 
+    
+    return render_template('generate.html', page='generate')
+
 @app.route('/contacts', methods=['GET', 'POST'])
 def contacts():
     if request.method == 'POST':
@@ -82,4 +93,4 @@ def get_json_string():
             return "", error_json_string
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5555)
+    app.run(debug=True, host="0.0.0.0", port=5555)

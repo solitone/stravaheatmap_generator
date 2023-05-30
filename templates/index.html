@@ -1,190 +1,103 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Strava Heatmap Cartograph</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light m-0 p-0">
-        <div class="container my-0 py-0">
-            <div class="collapse navbar-collapse" >
-                <ul class="navbar-nav mt-2">
-                    <li class="nav-item">
-                        <a class="nav-link {% if page == 'home' %}active bg-primary text-white fw-bold{% else %}text-primary{% endif %}" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if page == 'howto' %}active bg-primary text-white fw-bold{% else %}text-primary{% endif %}" href="/howto">Howto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if page == 'contacts' %}active bg-primary text-white fw-bold{% else %}text-primary{% endif %}" href="/contacts">Contatti</a>
-                    </li>
-                </ul>
+{% extends 'base.html' %}
+
+{% block content %}          
+<div class="my-1 list-group-item list-group-item-action">
+    <h3>Cos'è Strava Heatmap Generator?</h3>
+    <p>
+    Usi l'app <b>Cartograph Maps</b> e vuoi <b>sovrapporre Strava Heatmap</b> su una mappa vettoriale o online?
+    </p>
+    <p>
+    Usa la funzione <b>Genera Heatmap</b> per scaricare un file che puoi aprire direttamente 
+    in Cartograph Maps e ottenere quattro mappe di calore Strava:
+    
+    <small>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate su Strava</li>
+        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (ride)</b>: mostra i dati delle attività in bici</li>
+        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni</li>
+        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali come sci e ciaspole</li>
+    </ul>
+    </small>
+    </p>
+</div>
+
+<div class="my-1 list-group-item list-group-item-action">
+    <h4>Cos'è Cartograph Maps?</h4>
+    <p>
+        <a href="https://www.cartograph.eu">Cartograph Maps</a> è un'app per vedere <b>mappe offline e online</b> su vari dispositivi. 
+        L'app ha molte funzionalità per le attività all'aperto
+        ed è disponibile per <b>iOS, macOS, Android e Windows</b>.
+    </p>
+</div>
+
+<div class="my-1 list-group-item list-group-item-action">
+    <h4>Cos'è Strava Heatmap?</h4>
+    <p>        
+        <a href="https://www.strava.com/heatmap">Strava Heatmap</a> è una
+        rappresentazione grafica di dati di attività come corsa, 
+        ciclismo e altre attività sportive caricate dagli utenti,
+        che mostra la frequenza con cui sono stati seguiti 
+        i vari percorsi.
+    </p>
+</div>
+
+<div class="my-1 list-group-item list-group-item-action">
+    <h4>Perché usare Strava Heatmap?</h4>
+    <p>
+        I dati visualizzati in Strava Heatmap sono 
+        estremamente utili
+        per esplorare le montagne e scoprire nuovi sentieri.
+    </p>    
+    <p>
+        Sovrapponendo Strava Heatmap a una mappa come 
+        <a href="https://www.openstreetmap.org">OpenStreetMap</a>,
+        <a href="https://opentopomap.org">OpenTopoMap</a> o 
+        <a href="https://www.openandromaps.org">OpenAndroMaps</a>,
+        si possono individuare percorsi non ancora indicati su quelle mappe o capire che alcuni 
+        sentieri mappati non sono frequentati e potrebbero non essere più percorribili.  
+    </p>
+
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <div class="row">
+            <div class="thumbnail">
+                <a href="{{ url_for('static', filename='oam.png')}}" target="_blank">
+                    <figure class="figure">
+                        <img src="{{ url_for('static', filename='oam.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
+                        <figcaption class="figure-caption">Mappa OpenAndroMaps da sola</figcaption>
+                      </figure>
+                </a>
+            </div>
+            </div>
+            <div class="row">
+            <div class="thumbnail">
+                <a href="{{ url_for('static', filename='sh.png')}}" target="_blank">
+                    <figure class="figure">
+                        <img src="{{ url_for('static', filename='sh.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
+                        <figcaption class="figure-caption">Strava Heatmap da sola</figcaption>
+                      </figure>
+                </a>
+            </div>
             </div>
         </div>
-      </nav>
-    <div class="container mt-2">
-        <div class="row">
-            <div class="col-8 bg-light p-3 me-1 list-group">
-                <div class="my-1 list-group-item list-group-item-action">
-                    <p>
-                    Usi l'app <b>Cartograph Maps</b> e vuoi <b>sovrapporre Strava Heatmap</b> su una mappa vettoriale o online?
-                    </p>
-                    <p>
-                    Usa la funzione <b>Genera Heatmap</b> per scaricare un file che puoi aprire direttamente 
-                    in Cartograph Maps e ottenere quattro mappe di calore Strava:
-                    
-                    <small>
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate su Strava</li>
-                        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (ride)</b>: mostra i dati di attività in bici</li>
-                        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni</li>
-                        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali come sci e ciaspole</li>
-                    </ul>
-                    </small>
-                    </p>
-                </div>
-                
-                <div class="my-1 list-group-item list-group-item-action">
-                <h4>Cos'è Cartograph Maps?</h4>
-                <p>
-                    <a href="https://www.cartograph.eu">Cartograph Maps</a> è un'app per vedere <b>mappe offline e online</b> su vari dispositivi. 
-                    L'app ha molte funzionalità per le attività all'aperto
-                    ed è disponibile per <b>iOS, macOS, Android e Windows</b>.
-                </p>
-                </div>
-                
-                <div class="my-1 list-group-item list-group-item-action">
-                <h4>Cos'è Strava Heatmap?</h4>
-                <p>        
-                    <a href="https://www.strava.com/heatmap">Strava Heatmap</a> è una
-                    rappresentazione grafica di dati di attività come corsa, 
-                    ciclismo e altre attività sportive caricate dagli utenti,
-                    che mostra la frequenza con cui sono stati seguiti 
-                    i vari percorsi.
-                </p>
-                </div>
-                
-                <div class="my-1 list-group-item list-group-item-action">
-                <h4>Perché usare Strava Heatmap?</h4>
-                <p>
-                    I dati visualizzati in Strava Heatmap sono 
-                    estremamente utili
-                    per esplorare le montagne e scoprire nuovi sentieri.
-                </p>    
-                <p>
-                    Sovrapponendo Strava Heatmap a una mappa come 
-                    <a href="https://www.openstreetmap.org">OpenStreetMap</a>,
-                    <a href="https://opentopomap.org">OpenTopoMap</a> o 
-                    <a href="https://www.openandromaps.org">OpenAndroMaps</a>,
-                    si possono individuare percorsi non ancora indicati su quelle mappe o capire che alcuni 
-                    sentieri mappati non sono frequentati e potrebbero non essere più percorribili.  
-                </p>
-
-
-                <div class="row justify-content-center">
-                    <div class="col-5">
-                        <div class="row">
-                        <div class="thumbnail">
-                            <a href="{{ url_for('static', filename='oam.png')}}" target="_blank">
-                                <figure class="figure">
-                                    <img src="{{ url_for('static', filename='oam.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-                                    <figcaption class="figure-caption">Mappa OpenAndroMaps da sola</figcaption>
-                                  </figure>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="row">
-                        <div class="thumbnail">
-                            <a href="{{ url_for('static', filename='sh.png')}}" target="_blank">
-                                <figure class="figure">
-                                    <img src="{{ url_for('static', filename='sh.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-                                    <figcaption class="figure-caption">Strava Heatmap da sola</figcaption>
-                                  </figure>
-                            </a>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-1"></div>
-                    <div class="col-5">
-                        <div class="thumbnail">
-                            <a href="{{ url_for('static', filename='oam_sh.png')}}" target="_blank">
-                                <figure class="figure">
-                                    <img src="{{ url_for('static', filename='oam_sh.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-                                    <figcaption class="figure-caption">Strava Heatmap sovrapposta a mappa OpenAndroMaps. 
-                                        Ora riusciamo a notare:
-                                        <ul>
-                                            <li>Sentieri esistenti non presenti sulla mappa (cerchio verde)</li>
-                                            <li>Sentieri presenti sulla mappa ma poco precisi (cerchio giallo)</li>
-                                            <li>Sentieri presenti sulla mappa ma non sulla Heatmap, forse non più esistenti (cerchio rosso)</li>
-                                        </ul>
-                                    </figcaption>
-                                  </figure>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <row>
-                    <div class="text-center p-3 px-5 bg-primary text-white rounded">
-                        {% if json_string %}
-                            <h4>File pronto per il download</h4>
-                            <form action="/download" method="POST">
-                                <input type="hidden" name="json_string" value="{{ json_string }}">
-                                <button type="submit" class="btn btn-secondary">Scarica il file</button>
-                            </form>
-                        {% elif error_message %}
-                            <h4 class="bg-danger p-1">{{ error_message }}</h4>
-                        {% else %}
-                                <h4>Genera Heatmap</h4>
-                                <form method="POST">
-                                    <div class="mb-3">
-                                        <label for="color" class="form-label">Seleziona il colore:</label>
-                                                <select id="color" name="color" class="form-select">
-                                                    <option value="hot">Hot</option>
-                                                    <option value="blue">Blue</option>
-                                                    <option value="purple">Purple</option>
-                                                    <option value="gray">Gray</option>
-                                                    <option value="red">Red</option>
-                                                </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-secondary">Genera Heatmap</button>
-                                </form>
-                            {% endif %}
-                        </div>
-                </row>
-                <row>
-                    <div class="mt-3 p-3 bg-light">
-                        <ul class="nav list-group">
-                            <li class="nav-item list-group-item list-group-item-action">
-                                <h3 class="mt-3">Link utili</h3>
-                                <p>App e mappe</p>
-                            </li>
-                            <li class="nav-item list-group-item list-group-item-action">
-                                <a class="nav-link" href="https://www.cartograph.eu" target="_blank">Cartograph Maps</a>
-                            </li>
-                            <li class="nav-item list-group-item list-group-item-action">
-                                <a class="nav-link" href="https://www.strava.com/heatmap" target="_blank">Strava Heatmap</a>
-                            </li>
-                            <li class="nav-item list-group-item list-group-item-action">
-                                <a class="nav-link" href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a>
-                            </li>
-                            <li class="nav-item list-group-item list-group-item-action">
-                                <a class="nav-link" href="https://www.openandromaps.org" target="_blank">OpenAndroMaps</a>
-                            </li>
-                            <li class="nav-item list-group-item list-group-item-action">
-                                <a class="nav-link" href="https://opentopomap.org" target="_blank">OpenTopoMap</a>
-                            </li>
-                        </ul>
-                    </div>
-                </row>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="thumbnail">
+                <a href="{{ url_for('static', filename='oam_sh.png')}}" target="_blank">
+                    <figure class="figure">
+                        <img src="{{ url_for('static', filename='oam_sh.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
+                        <figcaption class="figure-caption">Strava Heatmap sovrapposta a mappa OpenAndroMaps. 
+                            Ora riusciamo a notare:
+                            <ul>
+                                <li>Sentieri esistenti non presenti sulla mappa (cerchio verde)</li>
+                                <li>Sentieri presenti sulla mappa ma poco precisi (cerchio giallo)</li>
+                                <li>Sentieri presenti sulla mappa ma non sulla Heatmap, forse non più esistenti (cerchio rosso)</li>
+                            </ul>
+                        </figcaption>
+                      </figure>
+                </a>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
+{% endblock %}
