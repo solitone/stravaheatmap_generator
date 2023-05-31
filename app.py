@@ -6,7 +6,7 @@
 #
 import stravalogin 
 import json
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request, make_response, session
 from urllib.parse import quote, unquote
 
 from stravaheatmap.cartograph.onlinemap import OnlineMap
@@ -68,6 +68,7 @@ def download():
         response = make_response(decoded_json_string)
         response.headers['Content-Type'] = 'application/json'
         response.headers['Content-Disposition'] = 'attachment; filename=carto_strava.onlinemap'
+
         return response
 
     return "Errore nel download del file."
