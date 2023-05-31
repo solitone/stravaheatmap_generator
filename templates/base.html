@@ -12,6 +12,7 @@
         <div class="container my-0 py-0">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
+                <span id="selectedNavLinkText" class="d-inline d-sm-none"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mt-2">
@@ -102,6 +103,16 @@
             // Mostra lo spinner
             document.getElementById("generate-spinner").classList.remove("d-none");
         });
-    </script>    
+    </script>
+    <script>
+        // Aggiorna il testo del pulsante "toggler" con il collegamento selezionato
+        document.addEventListener("DOMContentLoaded", function() {
+            var selectedNavLink = document.querySelector(".nav-link.active");
+            if (selectedNavLink) {
+                var selectedNavLinkText = selectedNavLink.innerText;
+                document.getElementById("selectedNavLinkText").innerText = selectedNavLinkText;
+            }
+        });
+    </script>
 </body>
 </html>
