@@ -1,0 +1,256 @@
+# English translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-06-06 12:42+0200\n"
+"PO-Revision-Date: 2023-06-06 12:43+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: app.py:71
+msgid "Errore nel download del file."
+msgstr "File download error."
+
+#: templates/base.html:26 templates/contacts.html:5
+msgid "Contatti"
+msgstr "Contacts"
+
+#: templates/base.html:38
+msgid "File pronto per il download"
+msgstr "File ready for download"
+
+#: templates/base.html:41
+msgid "Scarica il file"
+msgstr "Download file"
+
+#: templates/base.html:46 templates/base.html:60
+msgid "Genera Heatmap"
+msgstr "Generate Heatmap"
+
+#: templates/base.html:49
+msgid "Seleziona il colore:"
+msgstr "Select color"
+
+#: templates/base.html:70
+msgid "Link utili"
+msgstr "Some links"
+
+#: templates/base.html:71
+msgid "App e mappe"
+msgstr "Maps and apps"
+
+#: templates/contacts.html:7
+msgid "Profilo GitHub"
+msgstr "GitHub profile"
+
+#: templates/howto.html:5
+msgid "Come si usa Strava Heatmap Generator?"
+msgstr "How to use Strava Heatmap Generator"
+
+#: templates/howto.html:7
+msgid ""
+"\n"
+"        Usa il riquadro blu <b>Genera Heatmap</b> per scaricare la "
+"heatmap (la mappa di colore <b>hot</b> contiene i dati più aggiornati).\n"
+"        "
+msgstr ""
+"\n"
+"Use the blue box <b>Generate Heatmap</b> to download the heatmap 
+"(the <b>hot</b> color map contains the most up-to-date data).\n"
+"        "
+
+#: templates/howto.html:15
+msgid "Importa il file in Cartograph Maps:"
+msgstr "Import the file into Cartograph Maps:"
+
+#: templates/howto.html:18
+msgid ""
+"Se sei su <b>computer</b>: trascina e rilascia il file sopra la finestra "
+"di Cartograph Maps."
+msgstr ""
+"If you are on a <b>computer</b>: drag and drop the file over the Cartograph Maps window."
+
+#: templates/howto.html:19
+msgid ""
+"Se sei su <b>smartphone/tablet</b>: clicca sul file per aprirlo in "
+"Cartograph Maps. \n"
+"            Se non dovesse aprirsi automaticamente, seleziona <b>Apri "
+"in</b> Cartograph Maps."
+msgstr ""
+"If you are on a <b>smartphone/tablet</b>: click on the file to open it in Cartograph Maps. \n" 
+"If it does not open automatically, select <b>Open in</b> Cartograph Maps."
+
+#: templates/howto.html:28
+msgid ""
+"Vai nella sezione <b>mappe online</b> di Cartograph Maps. Clicca "
+"sull'occhio accanto a una delle quattro versioni di Strava Heatmap:"
+msgstr ""
+"In Cartograph Maps, go to the <b>online maps</b> section. 
+"Click on the eye icon next to one of the four versions of Strava Heatmap:"
+
+#: templates/howto.html:31 templates/index.html:16
+msgid ""
+"<b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate "
+"su Strava"
+msgstr ""
+"<b>Strava Heatmap (all)</b>: shows the data of all the activities uploaded on Strava"
+
+#: templates/howto.html:32 templates/index.html:17
+msgid "<b>Strava Heatmap (ride)</b>: mostra i dati delle attività in bici"
+msgstr "<b>Strava Heatmap (ride)</b>: shows the data of ride activites"
+
+#: templates/howto.html:33 templates/index.html:18
+msgid "<b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni"
+msgstr "<b>Strava Heatmap (run)</b>: shows the data of running and hiking activities"
+
+#: templates/howto.html:34 templates/index.html:19
+msgid ""
+"<b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali "
+"come sci e ciaspole"
+msgstr ""
+"<b>Strava Heatmap (winter)</b>: shows the data of winter activities such as skiing and snowshoeing"
+
+#: templates/howto.html:39
+msgid "Clicca sul pulsante <b>APPEND</b> e regola la trasparenza."
+msgstr "Click on the <b>APPEND</b> button and adjust the transparency."
+
+#: templates/howto.html:42
+msgid ""
+"Per sovrapporre (append) Strava Heatmap a un'altra mappa serve la "
+"versione a pagamento di Cartograph Maps."
+msgstr ""
+“To overlay (append) Strava Heatmap to another map you need the paid version of Cartograph Maps.”
+
+#: templates/howto.html:46
+msgid ""
+"\n"
+"        Dopo un certo numero di giorni, Strava Heatmap scade e non sarà "
+"più visualizzata in Cartograph Maps. \n"
+"        Dovrai quindi rigenerarla e ricaricarla in Cartograph Maps. Ti "
+"conviene cacellare le vecchie versioni \n"
+"        prima di importare la nuova.\n"
+"        "
+msgstr ""
+"\n"
+“After a certain number of days, Strava Heatmap expires and will no longer be displayed in Cartograph Maps. \n"
+"You will then have to regenerate it and reload it in Cartograph Maps. "
+"You should delete the old versions \n"
+        before importing the new one.\n”
+"        "
+
+#: templates/howto.html:55
+msgid "Caricare una Strava Heatmap"
+msgstr "Uploading a Strava Heatmap"
+
+#: templates/index.html:5
+msgid "Cos'è Strava Heatmap Generator?"
+msgstr ""
+
+#: templates/index.html:7
+msgid ""
+"Usi l'app <b>Cartograph Maps</b> e vuoi <b>sovrapporre Strava Heatmap</b>"
+" su una mappa vettoriale o online?"
+msgstr ""
+
+#: templates/index.html:10
+msgid ""
+"\n"
+"    Usa la funzione <b>Genera Heatmap</b> per scaricare un file che puoi "
+"aprire direttamente \n"
+"    in Cartograph Maps e ottenere quattro mappe di calore Strava:\n"
+"    "
+msgstr ""
+
+#: templates/index.html:26
+msgid "Cos'è Cartograph Maps?"
+msgstr ""
+
+#: templates/index.html:28
+msgid ""
+"\n"
+"        <a href=\"https://www.cartograph.eu\">Cartograph Maps</a> è "
+"un'app per vedere <b>mappe offline e online</b> su vari dispositivi. \n"
+"        L'app ha molte funzionalità per le attività all'aperto\n"
+"        ed è disponibile per <b>iOS, macOS, Android e Windows</b>.\n"
+"        "
+msgstr ""
+
+#: templates/index.html:37
+msgid "Cos'è Strava Heatmap?"
+msgstr ""
+
+#: templates/index.html:39
+msgid ""
+"\n"
+"        <a href=\"https://www.strava.com/heatmap\">Strava Heatmap</a> è "
+"una\n"
+"        rappresentazione grafica di dati di attività come corsa, \n"
+"        ciclismo e altre attività sportive caricate dagli utenti,\n"
+"        che mostra la frequenza con cui sono stati seguiti \n"
+"        i vari percorsi.\n"
+"        "
+msgstr ""
+
+#: templates/index.html:50
+msgid "Perché usare Strava Heatmap?"
+msgstr ""
+
+#: templates/index.html:52
+msgid ""
+"\n"
+"        I dati visualizzati in Strava Heatmap sono \n"
+"        estremamente utili\n"
+"        per esplorare le montagne e scoprire nuovi sentieri.\n"
+"        "
+msgstr ""
+
+#: templates/index.html:59
+msgid ""
+"\n"
+"        Sovrapponendo Strava Heatmap a una mappa come \n"
+"        <a href=\"https://www.openstreetmap.org\">OpenStreetMap</a>,\n"
+"        <a href=\"https://opentopomap.org\">OpenTopoMap</a> o \n"
+"        <a href=\"https://www.openandromaps.org\">OpenAndroMaps</a>,\n"
+"        si possono individuare percorsi non ancora indicati su quelle "
+"mappe o capire che alcuni \n"
+"        sentieri mappati non sono frequentati e potrebbero non essere più"
+" percorribili. \n"
+"        "
+msgstr ""
+
+#: templates/index.html:76
+msgid "Mappa OpenAndroMaps da sola"
+msgstr ""
+
+#: templates/index.html:86
+msgid "Strava Heatmap da sola"
+msgstr ""
+
+#: templates/index.html:99
+msgid ""
+"\n"
+"                            Strava Heatmap sovrapposta a mappa "
+"OpenAndroMaps. \n"
+"                            Ora riusciamo a notare:\n"
+"                            <ul>\n"
+"                                <li>Sentieri esistenti non presenti sulla"
+" mappa (cerchio verde)</li>\n"
+"                                <li>Sentieri presenti sulla mappa ma poco"
+" precisi (cerchio giallo)</li>\n"
+"                                <li>Sentieri presenti sulla mappa ma non "
+"sulla Heatmap, forse non più esistenti (cerchio rosso)</li>\n"
+"                            </ul>\n"
+"                            "
+msgstr ""
+

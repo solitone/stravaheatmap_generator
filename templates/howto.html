@@ -2,20 +2,22 @@
 
 {% block content %}
 <div class="my-1 list-group-item list-group-item-action">
-    <h3>Come si usa Strava Heatmap Generator?</h3>
+    <h3>{% trans %}Come si usa Strava Heatmap Generator?{% endtrans %}</h3>
     <p>
-    Usa il riquadro blu <b>Genera Heatmap</b> per scaricare la heatmap (la mappa di colore <b>hot</b> contiene i dati più aggiornati).
+        {% trans %}
+        Usa il riquadro blu <b>Genera Heatmap</b> per scaricare la heatmap (la mappa di colore <b>hot</b> contiene i dati più aggiornati).
+        {% endtrans %}
     </p>
 </div>
 
 <div class="my-1 list-group-item list-group-item-action">
     <p>
-    Importa il file in Cartograph Maps:
+    {% trans %}Importa il file in Cartograph Maps:{% endtrans %}
     <small>
         <ul class="list-group">
-        <li class="list-group-item list-group-item-action">Se sei su <b>computer</b>: trascina e rilascia il file sopra la finestra di Cartograph Maps.</li>
-        <li class="list-group-item list-group-item-action">Se sei su <b>smartphone/tablet</b>: clicca sul file per aprirlo in Cartograph Maps. 
-            Se non dovesse aprirsi automaticamente, seleziona <b>Apri in</b> Cartograph Maps.</li>
+        <li class="list-group-item list-group-item-action">{% trans %}Se sei su <b>computer</b>: trascina e rilascia il file sopra la finestra di Cartograph Maps.{% endtrans %}</li>
+        <li class="list-group-item list-group-item-action">{% trans %}Se sei su <b>smartphone/tablet</b>: clicca sul file per aprirlo in Cartograph Maps. 
+            Se non dovesse aprirsi automaticamente, seleziona <b>Apri in</b> Cartograph Maps.{% endtrans %}</li>
         </ul>
     </small>
     </p>
@@ -23,30 +25,34 @@
 
 <div class="my-1 list-group-item list-group-item-action">
     <p>
-    Vai nella sezione <b>mappe online</b> di Cartograph Maps. Clicca sull'occhio accanto a una delle quattro versioni di Strava Heatmap:
+    {% trans %}Vai nella sezione <b>mappe online</b> di Cartograph Maps. Clicca sull'occhio accanto a una delle quattro versioni di Strava Heatmap:{% endtrans %}
     <small>
         <ul class="list-group">
-            <li class="list-group-item list-group-item-action"><b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate su Strava</li>
-            <li class="list-group-item list-group-item-action"><b>Strava Heatmap (ride)</b>: mostra i dati delle attività in bici</li>
-            <li class="list-group-item list-group-item-action"><b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni</li>
-            <li class="list-group-item list-group-item-action"><b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali come sci e ciaspole</li>
+            <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate su Strava{% endtrans %}</li>
+            <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (ride)</b>: mostra i dati delle attività in bici{% endtrans %}</li>
+            <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni{% endtrans %}</li>
+            <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali come sci e ciaspole{% endtrans %}</li>
         </ul>
     </small>
     </p>
     <p>
-    Clicca sul pulsante <b>APPEND</b> e regola la trasparenza.
+    {% trans %}Clicca sul pulsante <b>APPEND</b> e regola la trasparenza.{% endtrans %}
     </p>
     <div class="bg-warning m-2 p-1 px-2">
-    <small>Per sovrapporre (append) Strava Heatmap a un'altra mappa serve la versione a pagamento di Cartograph Maps.</small>
+    <small>{% trans %}Per sovrapporre (append) Strava Heatmap a un'altra mappa serve la versione a pagamento di Cartograph Maps.{% endtrans %}</small>
     </div> 
     <div class="bg-warning m-2 p-1 px-2">
-    <small>Dopo un certo numero di giorni, Strava Heatmap scade e non sarà più visualizzata in Cartograph Maps. 
-           Dovrai quindi rigenerarla e ricaricarla in Cartograph Maps. Ti conviene cacellare le vecchie versioni 
-           prima di importare la nuova.</small>
+    <small>
+        {% trans %}
+        Dopo un certo numero di giorni, Strava Heatmap scade e non sarà più visualizzata in Cartograph Maps. 
+        Dovrai quindi rigenerarla e ricaricarla in Cartograph Maps. Ti conviene cacellare le vecchie versioni 
+        prima di importare la nuova.
+        {% endtrans %}
+    </small>
     </div>
     <figure class="figure mx-5 p-4">
         <img src="{{ url_for('static', filename='load.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-        <figcaption class="figure-caption">Caricare una Strava Heatmap</figcaption>
+        <figcaption class="figure-caption">{% trans %}Caricare una Strava Heatmap{% endtrans %}</figcaption>
     </figure>    
 </div>
 {% endblock %}

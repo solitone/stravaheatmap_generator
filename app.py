@@ -8,10 +8,18 @@ import stravalogin
 import json
 from flask import Flask, render_template, request, make_response, session
 from urllib.parse import quote, unquote
+from flask_babel import Babel, gettext  # for translations
 
 from stravaheatmap.cartograph.onlinemap import OnlineMap
 
 app = Flask(__name__)
+babel = Babel(app)
+
+def get_locale():
+#    return request.accept_languages.best_match(['it', 'en']) # returns best language for user
+    return request.accept_languages.best_match(['en']) # forces 'en' as best language for user
+
+babel.init_app(app, locale_selector=get_locale)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -60,7 +68,7 @@ def download():
 
         return response
 
-    return "Errore nel download del file."
+    return gettext("Errore nel download del file.")
 
 def get_json_string():
         color = request.form.get('color')

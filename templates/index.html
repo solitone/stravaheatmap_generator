@@ -2,59 +2,68 @@
 
 {% block content %}          
 <div class="my-1 list-group-item list-group-item-action">
-    <h3>Cos'è Strava Heatmap Generator?</h3>
+    <h3>{% trans %}Cos'è Strava Heatmap Generator?{% endtrans %}</h3>
     <p>
-    Usi l'app <b>Cartograph Maps</b> e vuoi <b>sovrapporre Strava Heatmap</b> su una mappa vettoriale o online?
+    {% trans %}Usi l'app <b>Cartograph Maps</b> e vuoi <b>sovrapporre Strava Heatmap</b> su una mappa vettoriale o online?{% endtrans %}
     </p>
     <p>
+    {% trans %}
     Usa la funzione <b>Genera Heatmap</b> per scaricare un file che puoi aprire direttamente 
     in Cartograph Maps e ottenere quattro mappe di calore Strava:
-    
+    {% endtrans %}
     <small>
     <ul class="list-group">
-        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate su Strava</li>
-        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (ride)</b>: mostra i dati delle attività in bici</li>
-        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni</li>
-        <li class="list-group-item list-group-item-action"><b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali come sci e ciaspole</li>
+        <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (all)</b>: mostra i dati di tutte le attività caricate su Strava{% endtrans %}</li>
+        <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (ride)</b>: mostra i dati delle attività in bici{% endtrans %}</li>
+        <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (run)</b>: mostra i dati di corse e escursioni{% endtrans %}</li>
+        <li class="list-group-item list-group-item-action">{% trans %}<b>Strava Heatmap (winter)</b>: mostra i dati delle attività invernali come sci e ciaspole{% endtrans %}</li>
     </ul>
     </small>
     </p>
 </div>
 
 <div class="my-1 list-group-item list-group-item-action">
-    <h4>Cos'è Cartograph Maps?</h4>
+    <h4>{% trans %}Cos'è Cartograph Maps?{% endtrans %}</h4>
     <p>
+        {% trans %}
         <a href="https://www.cartograph.eu">Cartograph Maps</a> è un'app per vedere <b>mappe offline e online</b> su vari dispositivi. 
         L'app ha molte funzionalità per le attività all'aperto
         ed è disponibile per <b>iOS, macOS, Android e Windows</b>.
+        {% endtrans %}
     </p>
 </div>
 
 <div class="my-1 list-group-item list-group-item-action">
-    <h4>Cos'è Strava Heatmap?</h4>
+    <h4>{% trans %}Cos'è Strava Heatmap?{% endtrans %}</h4>
     <p>        
+        {% trans %}
         <a href="https://www.strava.com/heatmap">Strava Heatmap</a> è una
         rappresentazione grafica di dati di attività come corsa, 
         ciclismo e altre attività sportive caricate dagli utenti,
         che mostra la frequenza con cui sono stati seguiti 
         i vari percorsi.
+        {% endtrans %}
     </p>
 </div>
 
 <div class="my-1 list-group-item list-group-item-action">
-    <h4>Perché usare Strava Heatmap?</h4>
+    <h4>{% trans %}Perché usare Strava Heatmap?{% endtrans %}</h4>
     <p>
+        {% trans %}
         I dati visualizzati in Strava Heatmap sono 
         estremamente utili
         per esplorare le montagne e scoprire nuovi sentieri.
+        {% endtrans %}
     </p>    
     <p>
+        {% trans %}
         Sovrapponendo Strava Heatmap a una mappa come 
         <a href="https://www.openstreetmap.org">OpenStreetMap</a>,
         <a href="https://opentopomap.org">OpenTopoMap</a> o 
         <a href="https://www.openandromaps.org">OpenAndroMaps</a>,
         si possono individuare percorsi non ancora indicati su quelle mappe o capire che alcuni 
-        sentieri mappati non sono frequentati e potrebbero non essere più percorribili.  
+        sentieri mappati non sono frequentati e potrebbero non essere più percorribili. 
+        {% endtrans %} 
     </p>
 
     <div class="row justify-content-center">
@@ -64,7 +73,7 @@
                 <a href="{{ url_for('static', filename='oam.png')}}" target="_blank">
                     <figure class="figure">
                         <img src="{{ url_for('static', filename='oam.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-                        <figcaption class="figure-caption">Mappa OpenAndroMaps da sola</figcaption>
+                        <figcaption class="figure-caption">{% trans %}Mappa OpenAndroMaps da sola{% endtrans %}</figcaption>
                       </figure>
                 </a>
             </div>
@@ -74,7 +83,7 @@
                 <a href="{{ url_for('static', filename='sh.png')}}" target="_blank">
                     <figure class="figure">
                         <img src="{{ url_for('static', filename='sh.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-                        <figcaption class="figure-caption">Strava Heatmap da sola</figcaption>
+                        <figcaption class="figure-caption">{% trans %}Strava Heatmap da sola{% endtrans %}</figcaption>
                       </figure>
                 </a>
             </div>
@@ -86,13 +95,16 @@
                 <a href="{{ url_for('static', filename='oam_sh.png')}}" target="_blank">
                     <figure class="figure">
                         <img src="{{ url_for('static', filename='oam_sh.png')}}" class="img-fluid rounded-3" alt="OpenAndroMaps">
-                        <figcaption class="figure-caption">Strava Heatmap sovrapposta a mappa OpenAndroMaps. 
+                        <figcaption class="figure-caption">
+                            {% trans %}
+                            Strava Heatmap sovrapposta a mappa OpenAndroMaps. 
                             Ora riusciamo a notare:
                             <ul>
                                 <li>Sentieri esistenti non presenti sulla mappa (cerchio verde)</li>
                                 <li>Sentieri presenti sulla mappa ma poco precisi (cerchio giallo)</li>
                                 <li>Sentieri presenti sulla mappa ma non sulla Heatmap, forse non più esistenti (cerchio rosso)</li>
                             </ul>
+                            {% endtrans %}
                         </figcaption>
                       </figure>
                 </a>
