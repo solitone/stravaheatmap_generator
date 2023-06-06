@@ -66,7 +66,7 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-"Use the blue box <b>Generate Heatmap</b> to download the heatmap 
+"Use the blue box <b>Generate Heatmap</b> to download the heatmap "
 "(the <b>hot</b> color map contains the most up-to-date data).\n"
 "        "
 
@@ -96,7 +96,7 @@ msgid ""
 "Vai nella sezione <b>mappe online</b> di Cartograph Maps. Clicca "
 "sull'occhio accanto a una delle quattro versioni di Strava Heatmap:"
 msgstr ""
-"In Cartograph Maps, go to the <b>online maps</b> section. 
+"In Cartograph Maps, go to the <b>online maps</b> section. "
 "Click on the eye icon next to one of the four versions of Strava Heatmap:"
 
 #: templates/howto.html:31 templates/index.html:16
@@ -130,7 +130,7 @@ msgid ""
 "Per sovrapporre (append) Strava Heatmap a un'altra mappa serve la "
 "versione a pagamento di Cartograph Maps."
 msgstr ""
-“To overlay (append) Strava Heatmap to another map you need the paid version of Cartograph Maps.”
+"To overlay (append) Strava Heatmap to another map you need the paid version of Cartograph Maps."
 
 #: templates/howto.html:46
 msgid ""
@@ -143,10 +143,10 @@ msgid ""
 "        "
 msgstr ""
 "\n"
-“After a certain number of days, Strava Heatmap expires and will no longer be displayed in Cartograph Maps. \n"
+"After a certain number of days, Strava Heatmap expires and will no longer be displayed in Cartograph Maps. \n"
 "You will then have to regenerate it and reload it in Cartograph Maps. "
 "You should delete the old versions \n"
-        before importing the new one.\n”
+"        before importing the new one.\n”
 "        "
 
 #: templates/howto.html:55
@@ -155,13 +155,15 @@ msgstr "Uploading a Strava Heatmap"
 
 #: templates/index.html:5
 msgid "Cos'è Strava Heatmap Generator?"
-msgstr ""
+msgstr "What is Strava Heatmap Generator?"
 
 #: templates/index.html:7
 msgid ""
 "Usi l'app <b>Cartograph Maps</b> e vuoi <b>sovrapporre Strava Heatmap</b>"
 " su una mappa vettoriale o online?"
 msgstr ""
+"Do you use the <b>Cartograph Maps</b> app and want to <b>overlay Strava Heatmap</b>"
+" on a vector or online map?"
 
 #: templates/index.html:10
 msgid ""
@@ -171,10 +173,15 @@ msgid ""
 "    in Cartograph Maps e ottenere quattro mappe di calore Strava:\n"
 "    "
 msgstr ""
+"\n"
+"    Use the <b>Generate Heatmap</b> function to download a file that you can "
+"directly open \n"
+"    in Cartograph Maps and obtain four Strava Heatmaps:\n"
+"    "
 
 #: templates/index.html:26
 msgid "Cos'è Cartograph Maps?"
-msgstr ""
+msgstr "What is Cartograph Maps?"
 
 #: templates/index.html:28
 msgid ""
@@ -185,10 +192,16 @@ msgid ""
 "        ed è disponibile per <b>iOS, macOS, Android e Windows</b>.\n"
 "        "
 msgstr ""
+"\n"
+"        <a href=\"https://www.cartograph.eu\">Cartograph Maps</a> is "
+"an app to view <b>offline and online maps</b> on various devices. \n"
+"        The app has many features for outdoor activities\n"
+"        and is available for <b>iOS, macOS, Android, and Windows</b>.\n"
+"        "
 
 #: templates/index.html:37
 msgid "Cos'è Strava Heatmap?"
-msgstr ""
+msgstr "What is Strava Heatmap?"
 
 #: templates/index.html:39
 msgid ""
@@ -201,10 +214,17 @@ msgid ""
 "        i vari percorsi.\n"
 "        "
 msgstr ""
+"\n"
+"        <a href=\"https://www.strava.com/heatmap\">Strava Heatmap</a> is "
+"a\n"
+"        graphical representation of activity data such as running, \n"
+"        cycling, and other sports activities uploaded by users,\n"
+"        showing the frequency with which various routes have been followed.\n"
+"        "
 
 #: templates/index.html:50
 msgid "Perché usare Strava Heatmap?"
-msgstr ""
+msgstr "Why use Strava Heatmap?"
 
 #: templates/index.html:52
 msgid ""
@@ -214,6 +234,11 @@ msgid ""
 "        per esplorare le montagne e scoprire nuovi sentieri.\n"
 "        "
 msgstr ""
+"\n"
+"        The data displayed in Strava Heatmap are \n"
+"        extremely useful\n"
+"        for exploring mountains and discovering new trails.\n"
+"        "
 
 #: templates/index.html:59
 msgid ""
@@ -228,14 +253,22 @@ msgid ""
 " percorribili. \n"
 "        "
 msgstr ""
+"\n"
+"        By overlaying Strava Heatmap on a map like \n"
+"        <a href=\"https://www.openstreetmap.org\">OpenStreetMap</a>,\n"
+"        <a href=\"https://opentopomap.org\">OpenTopoMap</a>, or \n"
+"        <a href=\"https://www.openandromaps.org\">OpenAndroMaps</a>,\n"
+"        you can identify routes not yet indicated on those maps or understand that some \n"
+"        mapped trails are not frequented and may no longer be passable. \n"
+"        "
 
 #: templates/index.html:76
 msgid "Mappa OpenAndroMaps da sola"
-msgstr ""
+msgstr "OpenAndroMaps map alone"
 
 #: templates/index.html:86
 msgid "Strava Heatmap da sola"
-msgstr ""
+msgstr "Strava Heatmap alone"
 
 #: templates/index.html:99
 msgid ""
@@ -253,4 +286,15 @@ msgid ""
 "                            </ul>\n"
 "                            "
 msgstr ""
-
+"\n"
+"                            Strava Heatmap overlaid on OpenAndroMaps map. \n"
+"                            Now we can notice:\n"
+"                            <ul>\n"
+"                                <li>Existing trails not present on the"
+" map (green circle)</li>\n"
+"                                <li>Trails present on the map but not very"
+" accurate (yellow circle)</li>\n"
+"                                <li>Trails present on the map but not "
+"on the Heatmap, perhaps no longer existing (red circle)</li>\n"
+"                            </ul>\n"
+"                            "
