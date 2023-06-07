@@ -17,7 +17,6 @@ app = Flask(__name__)
 # generate a random secret key of 32 characters (32 hexadecimal digits
 app.config['SECRET_KEY'] = secrets.token_hex(16)  
 babel = Babel(app)
-babel = Babel(app)
 
 def get_locale():
     if 'lang' in session:
