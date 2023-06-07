@@ -6,20 +6,34 @@
 #
 import stravalogin 
 import json
-from flask import Flask, render_template, request, make_response, session
+from flask import Flask, render_template, request, make_response, session, redirect, url_for
 from urllib.parse import quote, unquote
 from flask_babel import Babel, gettext  # for translations
-
 from stravaheatmap.cartograph.onlinemap import OnlineMap
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = '{[YZ6<UGnU_@ox)VDbg'  
+babel = Babel(app)
 babel = Babel(app)
 
 def get_locale():
-#    return request.accept_languages.best_match(['it', 'en']) # returns best language for user
-    return request.accept_languages.best_match(['en']) # forces 'en' as best language for user
+    if 'lang' in session:
+        return session['lang']    
+    return request.accept_languages.best_match(['it', 'en']) # returns best language for user
 
 babel.init_app(app, locale_selector=get_locale)
+
+@app.route('/lang/<lang>')
+def set_lang(lang=None):
+    session['lang'] = lang
+    return redirect(url_for('home'))
+
+# To use a Python function in a Jinja2 template,
+# we need to pass that function to the template's context.
+# With the following snippet function get_locale will be available in all templates
+@app.context_processor
+def inject_functions():
+    return dict(get_locale=get_locale)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
