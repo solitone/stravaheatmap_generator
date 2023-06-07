@@ -1,13 +1,16 @@
+Babel==2.12.1
 blinker==1.6.2
 click==8.1.3
 colorama==0.4.6
 Flask==2.3.2
+flask-babel==3.1.0
 html5lib==1.1
 importlib-metadata==6.6.0
 itsdangerous==2.1.2
 Jinja2==3.1.2
 MarkupSafe==2.1.2
 mechanize==0.4.8
+pytz==2023.3
 six==1.16.0
 stravacookies==1.3
 stravaheatmap==4.3
