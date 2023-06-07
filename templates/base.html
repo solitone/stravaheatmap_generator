@@ -26,16 +26,16 @@
                         <a class="nav-link {% if page == 'contacts' %}active bg-primary text-white fw-bold{% else %}text-primary{% endif %}" href="/contacts">{% trans %}Contatti{% endtrans %}</a>
                     </li>              
                 </ul>
-                <ul class="navbar-nav mt-2 ms-auto">
-                    <li class="nav-item">
-                        {% if get_locale() == 'en' %}
-                        <a class="nav-link" href="{{ url_for('set_lang', lang='it') }}">Italiano</a>
-                        {% else %}
-                        <a class="nav-link" href="{{ url_for('set_lang', lang='en') }}">English</a>
-                        {% endif %}
-                    </li>
-                </ul>
             </div>
+            <ul class="navbar-nav mt-2 ms-auto">
+                <li class="nav-item">
+                    {% if get_locale() == 'en' %}
+                    <a class="nav-link" href="{{ url_for('set_lang', lang='it') }}">Italiano</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ url_for('set_lang', lang='en') }}">English</a>
+                    {% endif %}
+                </li>
+            </ul>
         </div>
       </nav>
     <div class="container mt-2">

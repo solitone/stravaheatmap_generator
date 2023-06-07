@@ -6,13 +6,16 @@
 #
 import stravalogin 
 import json
+import secrets
 from flask import Flask, render_template, request, make_response, session, redirect, url_for
 from urllib.parse import quote, unquote
 from flask_babel import Babel, gettext  # for translations
+from urllib.parse import urlparse, urljoin
 from stravaheatmap.cartograph.onlinemap import OnlineMap
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '{[YZ6<UGnU_@ox)VDbg'  
+# generate a random secret key of 32 characters (32 hexadecimal digits
+app.config['SECRET_KEY'] = secrets.token_hex(16)  
 babel = Babel(app)
 babel = Babel(app)
 
@@ -26,7 +29,24 @@ babel.init_app(app, locale_selector=get_locale)
 @app.route('/lang/<lang>')
 def set_lang(lang=None):
     session['lang'] = lang
-    return redirect(url_for('home'))
+    referrer = request.referrer
+    if referrer is not None and is_safe_url(referrer):
+        return redirect(referrer)
+    else:
+        return redirect(url_for('home'))
+
+def is_safe_url(target):
+    """
+    Ensure the target url is safe and redirect there:
+    check that the url the user is redirected to 
+    does not come from an external site, thus avoiding 
+    potential phishing attacks or other types. 
+    If the url is not safe or does not exist, 
+    the user is redirected to the homepage.
+    """
+    ref_url = urlparse(request.host_url)
+    test_url = urlparse(urljoin(request.host_url, target))
+    return test_url.scheme in ('http', 'https') and ref_url.netloc == test_url.netloc
 
 # To use a Python function in a Jinja2 template,
 # we need to pass that function to the template's context.
